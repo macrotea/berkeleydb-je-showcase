@@ -63,7 +63,6 @@ public class SimpleBerkeleyDBDaoTest {
 
             db.put(null, keyEntry, valEntry);
         }
-
     }
 
     @Test
