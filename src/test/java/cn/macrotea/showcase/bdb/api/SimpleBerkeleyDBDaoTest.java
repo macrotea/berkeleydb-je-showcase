@@ -48,6 +48,29 @@ public class SimpleBerkeleyDBDaoTest {
         assertNull(result);
     }
 
+    @Test
+    public void testAdd_override() throws Exception {
+
+        //prepare
+        boolean addResult1 = dao.add("1", "one");
+        boolean addResult2 = dao.add("1", "oneone");
+        String found = dao.find("1");
+
+        //check
+        assertTrue(addResult1);
+        assertTrue(addResult2);
+        assertEquals(found, "oneone");
+
+        //clear
+        boolean deleteResult = dao.delete("1");
+        String result = dao.find("1");
+
+        //check again
+        assertTrue(deleteResult);
+        assertNull(result);
+    }
+
+
     @Test(timeout = 10000)
     public void testAdd_big_data() throws Exception {
 
