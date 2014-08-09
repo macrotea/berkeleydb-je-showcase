@@ -9,6 +9,7 @@
 
 - 所有单元测试执行通过
 - BerkeleyDBTemplate 类的封装
+- SimpleBerkeleyDBDao 类的单元测试
 
 ## 运行 ##
 
